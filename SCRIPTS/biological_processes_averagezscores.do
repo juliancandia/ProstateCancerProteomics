@@ -38,7 +38,7 @@ gen vasculature_sumzscore= z_a_ADGRG1 + z_a_ANG1 + z_a_TIE2 + z_a_ANGPT2 + z_a_C
 gen vasculature_averagezscore= (vasculature_sumzscore)/30
 
 *to export an updated version of the orignial data with the newly added biological processes averragezscore variables
-export excel  using "~\git\ProstateCancerProteomics\RESULTS\original_data_BPaveragezscores.xlsx" /*replace the path with your local path*/
+export excel  using "~\git\ProstateCancerProteomics\RESULTS\original_data_BPaveragezscores.xlsx", firstrow(variables) keepcellfmt /*replace the path with your local path*/
 
 *to export the averagezscores and race values for controls only
 export delimited race apoptosis_averagezscore autophagy_averagezscore chemotaxis_averagezscore promoteTI_averagezscore suppressTI_averagezscore vasculature_averagezscore if case==0 using "~\git\ProstateCancerProteomics\RESULTS\biological_processes_averagezscores_controls.txt" /*replace the path with your local path*/
